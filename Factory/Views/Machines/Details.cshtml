@@ -18,13 +18,13 @@ else
   <h3>
     @foreach (var join in Model.JoinEntities)
     {
-      @* add a link to engineer details *@
-        <li>@join.Engineer.Name</li>
+      <li>@Html.ActionLink($"{@join.Engineer.Name}", "Details", "Engineers", new {id = join.EngineerId})</li>
     }
   </h3>
 }
 
+<h4>@Html.ActionLink("Add a new licensed engineer", "AddEngineer", new { id = Model.MachineId })</h4>
 <h4>@Html.ActionLink("Edit machine information", "Edit", new { id = Model.MachineId })</h4>
 <h4>@Html.ActionLink("Delete this machine", "Delete", new { id = Model.MachineId })</h4>
 <h4>@Html.ActionLink("Return to machines view", "Index")</h4>
-<p>@Html.ActionLink("Return to homepage", "Index", "Home")</p>
+<h4>@Html.ActionLink("Return to homepage", "Index", "Home")</h4>
