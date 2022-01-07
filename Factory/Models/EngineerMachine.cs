@@ -6,7 +6,7 @@ namespace Factory.Models
     public int EngineerId { get; set; }
     public int MachineId { get; set; }
     public string Name { get; set; }
-    public virtual Engineer Engineer;
-    public virtual Machine Machine;
+    public virtual Engineer Engineer { get; set; }
+    public virtual Machine Machine { get; set; }
   }
 }
