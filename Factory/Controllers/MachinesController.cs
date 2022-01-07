@@ -44,5 +44,12 @@ namespace Factory.Controllers
         var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
         return View(thisMachine);
       }
+      [HttpPost]
+      public ActionResult Edit(Machine machine)
+      {
+        _db.Entry(machine).State = EntityState.Modified;
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+      }
     }
 }
