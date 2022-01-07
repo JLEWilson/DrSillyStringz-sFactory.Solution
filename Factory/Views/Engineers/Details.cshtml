@@ -14,7 +14,7 @@
 }
 else 
 {
-  <h2>Engineers licensed to repair:</h2>
+  <h2>Machines engineer is licensed to repair:</h2>
   <h3>
     @foreach (var join in Model.JoinEntities)
     {
@@ -24,7 +24,8 @@ else
   </h3>
 }
 
+<h4>@Html.ActionLink("Add a new machine license", "AddMachine", new { id = Model.EngineerId })</h4>
 <h4>@Html.ActionLink("Edit engineer information", "Edit", new { id = Model.EngineerId })</h4>
 <h4>@Html.ActionLink("Delete this engineer", "Delete", new { id = Model.EngineerId })</h4>
 <h4>@Html.ActionLink("Return to Engineers view", "Index")</h4>
-<p>@Html.ActionLink("Return to homepage", "Index", "Home")</p>
+<h4>@Html.ActionLink("Return to homepage", "Index", "Home")</h4>
