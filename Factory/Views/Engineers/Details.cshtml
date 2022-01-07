@@ -18,8 +18,7 @@ else
   <h3>
     @foreach (var join in Model.JoinEntities)
     {
-      @* add a link to engineer details *@
-        <li>@join.Machine.Name</li>
+      <li>@Html.ActionLink($"{@join.Machine.Name}", "Details", "Machines", new {id = join.MachineId})</li>
     }
   </h3>
 }
