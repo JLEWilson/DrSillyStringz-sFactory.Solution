@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h1>Add a machine that @Model.Name is licensed to repair:</h1>
+
+@if(@ViewBag.EngineerId == null)
+{
+  <h2>There are no machines available. <br> Please @Html.ActionLink("Add a machine", "Create", "Machines").</h2>
+}
+else
+{
+  <h3>
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.MachineId)
+
+    @Html.Label("Select engineer")
+    @Html.DropDownList("EngineerId")
+
+    <input type="submit" value="Save" class="btn btn-lg btn-dark"/>
+  }
+  </h3>
+}
+
+<h4>@Html.ActionLink("Add a machine", "Create")</h4>
+<h4>@Html.ActionLink("Back to Machines list", "Index")</h4>
