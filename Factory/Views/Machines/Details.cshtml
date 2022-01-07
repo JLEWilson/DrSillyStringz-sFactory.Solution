@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h1>Machine Details:</h1>
+<h2>@Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Name)</h2>
+
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <h2>There are currently no engineers licensed to repair this machine.</h2>
+}
+else 
+{
+  <h2>Engineers licensed to repair:</h2>
+  <h3>
+    @foreach (var join in Model.JoinEntities)
+    {
+      @* add a link to engineer details *@
+        <li>@join.Engineer.Name</li>
+    }
+  </h3>
+}
+
+<h4>@Html.ActionLink("Edit machine information", "Edit", new { id = Model.MachineId })</h4>
+<h4>@Html.ActionLink("Return to machines view", "Edit", new { id = Model.MachineId })</h4>
