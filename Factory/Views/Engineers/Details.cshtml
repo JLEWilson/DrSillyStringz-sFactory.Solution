@@ -27,7 +27,8 @@ else
     }
   </h3>
 }
-
-<h4>@Html.ActionLink("Add a New Machine License", "AddMachine", new { id = Model.EngineerId })</h4>
-<h4>@Html.ActionLink("Edit Engineer Information", "Edit", new { id = Model.EngineerId })</h4>
-<h4>@Html.ActionLink("Delete This Engineer", "Delete", new { id = Model.EngineerId })</h4>
+<div class="h4-links">
+  <h4>@Html.ActionLink("Add a New Machine License", "AddMachine", new { id = Model.EngineerId })</h4>
+  <h4>@Html.ActionLink("Edit Engineer Information", "Edit", new { id = Model.EngineerId })</h4>
+  <h4>@Html.ActionLink("Delete This Engineer", "Delete", new { id = Model.EngineerId })</h4>
+</div>
