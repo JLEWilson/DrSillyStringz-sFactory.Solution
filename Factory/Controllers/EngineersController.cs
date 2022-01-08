@@ -87,10 +87,9 @@ namespace Factory.Controllers
     public ActionResult DeleteMachine(int joinId)
     {
       var joinEntry = _db.EngineerMachine.FirstOrDefault(join => join.EngineerMachineId == joinId);
-      var engineer = _db.Engineers.FirstOrDefault(eng => eng.EngineerId == joinEntry.EngineerId);
       _db.EngineerMachine.Remove(joinEntry);
       _db.SaveChanges();
-      return RedirectToAction("Details", engineer.EngineerId);
+      return RedirectToAction("Index");
     }
   }
 }
