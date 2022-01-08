@@ -3,3 +3,36 @@
 }
 <h1>Welcome Dr. Sillystringz!</h1>
 
+@if(@ViewBag.Engineers.Count == 0)
+{
+  <h1>No engineers have been added. Please add an engineer</h1>
+}
+else
+{
+  <h3>
+    Engineers:
+    @foreach (var eng in ViewBag.Engineers)
+    {
+        <li>@Html.ActionLink($"{eng.Name}", "Details", new {id = eng.EngineerId})</li>
+    }
+  </h3>
+}
+
+@if(@ViewBag.Machines.Count == 0)
+{
+  <h1>No machines have been added. Please add a machine</h1>
+}
+else
+{
+  <h3>
+    Machines:
+    @foreach (var mac in ViewBag.Machines)
+    {
+        <li>@Html.ActionLink($"{mac.Name}", "Details", new {id = mac.MachineId})</li>
+    }
+  </h3> 
+}
+<div class="h4-links">
+  <h4>@Html.ActionLink("Add an Engineer", "Create", "Engineers")</h4>
+  <h4>@Html.ActionLink("Add a Machine", "Create", "Machines")</h4>
+</div>
