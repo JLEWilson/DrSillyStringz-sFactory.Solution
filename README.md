@@ -18,7 +18,7 @@
 
 ## Description
 
-_An mvc application that allows the user to facilitate Engineer/Machine. This project emphasizes practicing many to many relationships. The user is able to create a machine object that can can be repaired by any number of engineers that are licensed, an engineer object that can become licensed to be able to repair any number of machines. The project contains a plash page that lists all created objects as well as a navigation bar that can direct you either to both a machines list and an engineers list._
+_An mvc application that allows the user to facilitate Engineer/Machine. This project emphasizes practicing many to many relationships. The user is able to create a machine object that can can be repaired by any number of engineers that are licensed, an engineer object that can become licensed to be able to repair any number of machines. The project contains a splash page that lists all created objects as well as a navigation bar that can direct you either to both a machines list and an engineers list._
 
 ## Setup/Installation Requirements
 
